@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key Metrics for Cards - Stripe Style Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+        <div class="header">
+            <h1>Key metrics for cards</h1>
+            <div class="controls">
+                <span class="compare-text">Compared to</span>
+                <select class="period-select">
+                    <option>Previous month</option>
+                    <option>Previous week</option>
+                    <option>Previous year</option>
+                </select>
+                <span class="date-range">Jun 1 - Jun 15</span>
+                <button class="download-btn">📥 Download</button>
+            </div>
+        </div>
+
+        <!-- Key Metrics Cards -->
+        <div class="metrics-cards">
+            <div class="metric-card">
+                <div class="metric-header">
+                    <span class="metric-label">Payment success rate</span>
+                    <span class="info-icon">ℹ</span>
+                </div>
+                <div class="metric-value">51.86%</div>
+                <div class="metric-change positive">+2.98%</div>
+            </div>
+            
+            <div class="metric-card highlighted">
+                <div class="metric-header">
+                    <span class="metric-label">Accepted volume</span>
+                    <span class="info-icon">ℹ</span>
+                </div>
+                <div class="metric-value">$1.23M</div>
+                <div class="metric-change positive">+15.12%</div>
+            </div>
+            
+            <div class="metric-card">
+                <div class="metric-header">
+                    <span class="metric-label">Accepted payments</span>
+                    <span class="info-icon">ℹ</span>
+                </div>
+                <div class="metric-value">4.14K</div>
+                <div class="metric-change positive">+2.32%</div>
+            </div>
+        </div>
+
+        <!-- Chart Container -->
+        <div class="chart-container">
+            <div id="chart"></div>
+            <div class="chart-footer">
+                <span class="chart-start-date">Jun 1, 2025</span>
+                <span class="chart-end-date">Jun 15, 2025</span>
+                <span class="updated-text">Updated yesterday</span>
+            </div>
+        </div>
+
+        <!-- Breakdown Table -->
+        <div class="breakdown-table">
+            <div class="table-header">
+                <div class="category-col">Category</div>
+                <div class="volume-col">Payment volume</div>
+                <div class="share-col">Share of volume</div>
+                <div class="change-col">Change</div>
+            </div>
+            
+            <div class="table-row main-row">
+                <div class="category">
+                    <span class="category-name">Accepted payments</span>
+                </div>
+                <div class="volume">$1,231,499.15</div>
+                <div class="share">52.29%</div>
+                <div class="change positive">+15.12%</div>
+            </div>
+            
+            <div class="table-row sub-row">
+                <div class="category">
+                    <span class="status-indicator accepted"></span>
+                    <span class="category-name">Accepted</span>
+                </div>
+                <div class="volume">$1,231,499.15</div>
+                <div class="share">52.29%</div>
+                <div class="change positive">+15.12%</div>
+            </div>
+            
+            <div class="table-row main-row">
+                <div class="category">
+                    <span class="category-name">Failed payments</span>
+                </div>
+                <div class="volume">$1,123,700.00</div>
+                <div class="share">47.72%</div>
+                <div class="change positive">+1.02%</div>
+            </div>
+            
+            <div class="table-row sub-row">
+                <div class="category">
+                    <span class="status-indicator declined"></span>
+                    <span class="category-name">Issuer declined</span>
+                </div>
+                <div class="volume">$440,650.00</div>
+                <div class="share">18.71%</div>
+                <div class="change positive">+0.44%</div>
+            </div>
+            
+            <div class="table-row sub-row">
+                <div class="category">
+                    <span class="status-indicator failure"></span>
+                    <span class="category-name">3DS failures</span>
+                </div>
+                <div class="volume">$55,250.00</div>
+                <div class="share">2.35%</div>
+                <div class="change negative">-18.87%</div>
+            </div>
+            
+            <div class="table-row sub-row">
+                <div class="category">
+                    <span class="status-indicator blocked"></span>
+                    <span class="category-name">Blocked</span>
+                </div>
+                <div class="volume">$627,800.00</div>
+                <div class="share">26.66%</div>
+                <div class="change positive">+3.68%</div>
+            </div>
+            
+            <div class="table-row total-row">
+                <div class="category">
+                    <span class="category-name">Total</span>
+                </div>
+                <div class="volume">$2,355,199.15</div>
+                <div class="share">100.00%</div>
+                <div class="change"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
